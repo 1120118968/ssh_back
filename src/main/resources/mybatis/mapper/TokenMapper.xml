@@ -14,7 +14,7 @@
     <insert id="addToken" parameterType="cn.miaozt.onlineschool.model.Token" >
        INSERT INTO
        		tokeninfo
-       		(id,user_id,token,buildtime）
+       		(id,user_id,token,buildtime)
        	VALUES
        		(#{id}, #{user_id}, #{token}, #{buildtime})
     </insert>
