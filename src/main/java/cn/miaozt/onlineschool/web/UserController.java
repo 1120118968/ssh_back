@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping(value="/users")
+@ResponseBody
+@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
 public class UserController {
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
     private static Cookie cookie;

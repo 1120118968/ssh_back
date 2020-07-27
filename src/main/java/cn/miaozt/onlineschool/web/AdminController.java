@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 
 @RestController
+@ResponseBody
 @RequestMapping(value="/admin")
+@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
 public class AdminController {
     static Map<Long, Admin> admins = Collections.synchronizedMap(new HashMap<Long, Admin>());
     private static Cookie cookie;
