@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.miaozt.onlineschool.mapper.CommentInfoMapper" >
-    <resultMap id="BaseResultMap" type="cn.miaozt.onlineschool.model.CommentInfo" >
+<mapper namespace="cn.czq.personSpace.mapper.CommentInfoMapper" >
+    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.CommentInfo" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="post_user_id" property="postUserId" jdbcType="INTEGER" />
         <result column="content" property="content" jdbcType="VARCHAR" />
@@ -41,13 +41,13 @@
         WHERE id=#{id}
     </delete>
 
-    <update id="updateCommentByChapterId" parameterType="cn.miaozt.onlineschool.model.CommentInfo">
+    <update id="updateCommentByChapterId" parameterType="cn.czq.personSpace.model.CommentInfo">
         UPDATE comment_info
         SET content=#{content}
         where id=#{id}
     </update>
 
-    <insert id="insComment" parameterType="cn.miaozt.onlineschool.model.CommentInfo">
+    <insert id="insComment" parameterType="cn.czq.personSpace.model.CommentInfo">
         INSERT INTO comment_info(post_user_id,content,chapter_id,type,post_time,parent_id)
         VALUES(#{postUserId},#{content},#{chapterId},#{type},#{postTime},#{parentId})
     </insert>
