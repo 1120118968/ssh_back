@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.czq.personSpace.mapper.UserMapper" >
-    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.User" >
+<mapper namespace="cn.czq.personSpace.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.User">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="username" property="username" jdbcType="VARCHAR" />
         <result column="password" property="password" jdbcType="VARCHAR" />
@@ -40,15 +40,15 @@
         WHERE username = #{username} and password = #{password}
     </select>
 
-    <insert id="insert" parameterType="cn.czq.personSpace.model.User" >
+    <insert id="insert" parameterType="cn.czq.personSpace.model.User">
        INSERT INTO
        		user_info
        		(username,password,email,sex,tel)
        	VALUES
        		(#{username}, #{password}, #{email}, #{sex}, #{tel})
     </insert>
-    
-    <update id="update" parameterType="cn.czq.personSpace.model.User" >
+
+    <update id="update" parameterType="cn.czq.personSpace.model.User">
        UPDATE
         user_info
        SET 

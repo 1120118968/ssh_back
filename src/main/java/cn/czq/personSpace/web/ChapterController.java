@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/chapter")
 @ResponseBody
-@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
+@CrossOrigin
 public class ChapterController {
 
     @Autowired(required = false)

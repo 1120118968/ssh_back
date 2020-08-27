@@ -3,7 +3,9 @@ package cn.czq.personSpace.model;
 import cn.czq.personSpace.enums.UserIsLearning;
 import cn.czq.personSpace.enums.UserIsNull;
 
-public class ChapterFullResult {
+import java.io.Serializable;
+
+public class ChapterFullResult implements Serializable {
     private ChapterInfo chapterInfo;
     private CourseInfo courseInfo;
     private UserCourseRelationship userCourseRelationship;

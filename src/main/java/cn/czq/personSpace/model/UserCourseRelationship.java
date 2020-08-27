@@ -4,7 +4,9 @@ package cn.czq.personSpace.model;
 import cn.czq.personSpace.enums.CourseIsOver;
 import cn.czq.personSpace.enums.CourseIsPay;
 
-public class UserCourseRelationship {
+import java.io.Serializable;
+
+public class UserCourseRelationship implements Serializable {
 
   private long id;
   private long userId;

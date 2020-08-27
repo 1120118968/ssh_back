@@ -1,8 +1,9 @@
 package cn.czq.personSpace.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CommentInfo {
+public class CommentInfo implements Serializable {
     private long id;
     private long postUserId;
     private String content;

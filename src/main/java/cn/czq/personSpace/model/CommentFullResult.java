@@ -1,8 +1,9 @@
 package cn.czq.personSpace.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class CommentFullResult {
+public class CommentFullResult implements Serializable {
     private ChapterInfo chapterInfo;
     private List<CommentInfo> commentInfos;
 

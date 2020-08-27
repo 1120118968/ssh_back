@@ -25,7 +25,7 @@ public class SwaggerConfig {
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API文档")//接口文档主题
+                .title("Person Blog")//接口文档主题
                 .description("http:localhost:8888/")//地址
                 .termsOfServiceUrl("http:localhost:8888/")//路径
                 .version("1.0.0")//版本号

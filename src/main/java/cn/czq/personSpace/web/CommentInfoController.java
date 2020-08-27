@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/commentInfo")
 @ResponseBody
-@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
+@CrossOrigin
 public class CommentInfoController {
 
     @Autowired(required = false)

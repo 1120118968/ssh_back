@@ -5,6 +5,7 @@ import cn.czq.personSpace.mapper.UserMapper;
 import cn.czq.personSpace.model.Result;
 import cn.czq.personSpace.model.Token;
 import cn.czq.personSpace.model.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +21,20 @@ import java.util.Map;
 @RestController
 @RequestMapping(value="/users")
 @ResponseBody
-@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
+@JsonIgnoreProperties(value = {"handler"})
+@CrossOrigin
 public class UserController {
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
     private static Cookie cookie;
-	@Autowired(required = false)
-	private UserMapper userMapper;
+
+    @Autowired
+    private UserMapper userMapper;
+
+
     @RequestMapping(value="/", method=RequestMethod.GET)
+
     @ApiOperation(value="获取所有用户", notes="获取所有用户")
+
     public List<User> getUserList() {
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
@@ -125,6 +132,7 @@ public class UserController {
             response.addCookie(cookie);
             request.getSession().setAttribute("user",user2);
             result.setMsg("success");
+            result.setFlag(true);
             Token token=new Token(user2);
 
             result.setToken(token.getToken());
@@ -134,11 +142,23 @@ public class UserController {
         return result;
 
     }
+
     //String username,String password,String email,String sex
     @RequestMapping(value ="/register",method = RequestMethod.POST)
     @ApiOperation(value = "注册接口，成功后获取cookies信息",httpMethod = "POST")
-    public Result regist(String username, String password, String email, UserSexEnum sex){
-        User user2=userMapper.getOneByUserName(username);
+    public Result register(@RequestParam(value = "username", required = false)
+                                   String username,
+                           @RequestParam(value = "password", required = false)
+                                   String password,
+                           //     @RequestParam(value = "email",required = false)
+                           String email,
+                           //      @RequestParam(value = "sex",required = false)
+                           UserSexEnum sex) {
+//        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+//        userMapper = (UserMapper) ac.getBean(UserMapper.class);
+        // userMapper = SpringApplicationContextHolder.getBean(UserMapper.class);
+        User user2 = userMapper.getOneByUserName(username);
+
         Result result=new Result();
         if(user2!=null){
 

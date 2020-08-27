@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "log4j.logger.freemarker.beans",
+      "type": "java.lang.String",
+      "description": "Description for log4j.logger.freemarker.beans."
+    },
+    {
+      "name": "log4j.logger.freemarker.cache",
+      "type": "java.lang.String",
+      "description": "Description for log4j.logger.freemarker.cache."
+    }
+  ]
+}

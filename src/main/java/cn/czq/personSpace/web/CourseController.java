@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/course")
 @ResponseBody
-@CrossOrigin(origins = "*",allowCredentials="true",allowedHeaders = "",methods = {})
+@CrossOrigin
 public class CourseController {
 
     @Autowired(required = false)

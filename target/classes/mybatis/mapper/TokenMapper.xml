@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.czq.personSpace.mapper.TokenMapper" >
-    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.Token" >
+<mapper namespace="cn.czq.personSpace.mapper.TokenMapper">
+    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.Token">
         <id column="token_id" property="tokenid" jdbcType="INTEGER" />
         <result column="user_id" property="userid" jdbcType="INTEGER" />
         <result column="token" property="token" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
           token_id , user_id , token, build_time
     </sql>
     <!--插入Token addToken(Token token) @yangchaoyi-->
-    <insert id="addToken" parameterType="cn.czq.personSpace.model.Token" >
+    <insert id="addToken" parameterType="cn.czq.personSpace.model.Token">
        INSERT INTO
        		tokeninfo
        		(id,user_id,token,buildtime)
@@ -19,7 +19,7 @@
        		(#{id}, #{user_id}, #{token}, #{buildtime})
     </insert>
     <!--更新功能 updataToken(Token token)  @yangchaoyi-->
-    <update id="updataToken" parameterType="cn.czq.personSpace.model.Token" >
+    <update id="updataToken" parameterType="cn.czq.personSpace.model.Token">
         UPDATE
         tokeninfo
         SET

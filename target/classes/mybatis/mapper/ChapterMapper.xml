@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.czq.personSpace.mapper.ChapterInfoMapper" >
-    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.ChapterInfo" >
+<mapper namespace="cn.czq.personSpace.mapper.ChapterInfoMapper">
+    <resultMap id="BaseResultMap" type="cn.czq.personSpace.model.ChapterInfo">
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="course_id" property="courseId" jdbcType="INTEGER" />
         <result column="title" property="title" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
         <result column="episode_duration" property="episodeDuration" jdbcType="VARCHAR" />
         <result column="chapter_index" property="chapterIndex" jdbcType="VARCHAR" />
         <result column="exp" property="exp" jdbcType="VARCHAR" />
-        <result column="is_free" property="isFree" javaType="cn.czq.personSpace.enums.CourseIsFree"  />
+        <result column="is_free" property="isFree" javaType="cn.czq.personSpace.enums.CourseIsFree"/>
     </resultMap>
     <sql id="Base_Column_List" >
           id , course_id , title, video_url, image_url,description,description_full,document_url,
